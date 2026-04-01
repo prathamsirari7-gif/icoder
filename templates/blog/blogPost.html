@@ -1,0 +1,28 @@
+{% extends 'home/base.html' %}
+
+{% block title %} BlogPost {% endblock title %}
+{% block blogactive %} active {% endblock blogactive %}
+
+{% block body %}
+
+<div class="container my-4">
+
+    <!-- Title -->
+    <h1 class="blog-post-title">{{ post.title }}</h1>
+
+    <!-- Author + Date -->
+    <p class="text-muted">
+        {{ post.timeStamp }} by 
+        <a href="/about">{{ post.author }}</a>
+    </p>
+
+    <hr>
+
+    <!-- Content -->
+    <div style="font-size:18px; line-height:1.8;">
+        {{ post.content|linebreaks }}
+    </div>
+
+</div>
+
+{% endblock body %}

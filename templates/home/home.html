@@ -1,0 +1,117 @@
+{% extends 'home/base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block body %}
+
+<style>
+.hero {
+    background: linear-gradient(135deg, #11998e, #38ef7d);
+    color: white;
+    padding: 80px 20px;
+}
+
+.card-hover {
+    transition: all 0.3s ease;
+    border-radius: 15px;
+}
+
+.card-hover:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.section-title {
+    font-weight: bold;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    width: 80px;
+    height: 4px;
+    background: #38ef7d;
+    display: block;
+    margin: 10px auto;
+    border-radius: 10px;
+}
+</style>
+<div class="hero text-center d-flex align-items-center justify-content-center" style="min-height: 60vh;">
+    <div>
+        <h1 class="display-2 fw-bold">Build Your Future with Code 🚀</h1>
+        <p class="lead">Master coding with real projects & become job-ready 💼</p>
+        <a href="/blog" class="btn btn-dark btn-lg mt-3 px-4">Start Learning</a>
+    </div>
+</div>
+
+<div class="container my-5">
+
+    <!-- 🚀 FEATURES -->
+    <h2 class="text-center mb-5">What You’ll Learn 🚀</h2>
+
+    <div class="row text-center">
+
+        <div class="col-md-4">
+            <div class="card p-4 shadow card-hover">
+                <h4>💻 Web Development</h4>
+                <p>Learn HTML, CSS, Bootstrap & Django step-by-step</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card p-4 shadow card-hover">
+                <h4>⚙️ Backend</h4>
+                <p>Master Django, APIs, and database integration</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card p-4 shadow card-hover">
+                <h4>🛠 Projects</h4>
+                <p>Build real-world projects for your portfolio</p>
+            </div>
+        </div>
+
+    </div>
+
+    <hr class="my-5">
+
+    <!-- 📸 IMAGE SECTION -->
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <h2>Start Your Coding Journey Today 💡</h2>
+            <p>
+                iCoder helps beginners become confident developers by providing 
+                easy tutorials, practical projects, and real-world examples.
+            </p>
+            <a href="/blog" class="btn btn-primary">Start Learning</a>
+        </div>
+
+        <div class="col-md-6 text-center">
+            <img src="https://source.unsplash.com/500x300/?programming,coding" 
+                 class="img-fluid rounded shadow">
+        </div>
+    </div>
+
+    <hr class="my-5">
+
+    <!-- ⭐ POPULAR POSTS -->
+    <h2 class="text-center mb-4">🔥 Popular Posts</h2>
+
+    <div class="row">
+        {% for post in allPosts %}
+        <div class="col-md-6">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h5>{{ post.title }}</h5>
+                    <p>{{ post.content|truncatechars:100 }}</p>
+                    <a href="/blog/{{post.slug}}" class="btn btn-sm btn-outline-primary">Read More</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endblock body %}

@@ -1,0 +1,92 @@
+{% extends 'home/base.html' %}
+
+{% block title %}About{% endblock title %}
+
+{% block body %}
+
+<style>
+.hero-gradient {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+.card-hover:hover {
+    transform: translateY(-10px);
+    transition: 0.3s;
+}
+</style>
+
+<div class="container my-4">
+
+    <!-- 🔥 Hero Section -->
+    <div class="p-5 mb-5 text-white rounded-3 hero-gradient text-center">
+        <h1 class="display-4 fw-bold">iCoder 👨‍💻</h1>
+        <p class="lead">Learn coding, build projects & become job-ready 🚀</p>
+    </div>
+
+    <!-- 👨‍💻 About -->
+    <div class="row align-items-center mb-5">
+        <div class="col-md-6">
+            <h2>Who We Are 🤔</h2>
+            <p>
+                iCoder is a coding blog created for beginners and developers 
+                who want to learn programming in a simple and practical way.
+                We focus on real-world projects and easy explanations.
+            </p>
+        </div>
+
+        <div class="col-md-6 text-center">
+            <img src="https://source.unsplash.com/500x300/?coding,computer" 
+                 class="img-fluid rounded shadow" alt="">
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- 🚀 Features -->
+    <div class="row text-center my-5">
+        <h2 class="mb-4">What You’ll Get 🚀</h2>
+
+        <div class="col-md-4">
+            <div class="card shadow p-4 card-hover">
+                <h4>💻 Tutorials</h4>
+                <p>Easy step-by-step coding tutorials</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow p-4 card-hover">
+                <h4>🛠 Projects</h4>
+                <p>Build real-world applications</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow p-4 card-hover">
+                <h4>⚡ Tips</h4>
+                <p>Developer tips & tricks to boost productivity</p>
+            </div>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <!-- ⚙️ Tech Stack -->
+    <div class="text-center my-5">
+        <h2>Technologies We Use ⚙️</h2>
+        <p style="font-size:18px;">
+            Python 🐍 | Django 🌐 | HTML 💻 | CSS 🎨 | Bootstrap ⚡
+        </p>
+    </div>
+
+    <hr>
+
+    <!-- 🔥 Call to Action -->
+    <div class="text-center p-5 bg-dark text-white rounded">
+        <h3>🚀 Start Your Coding Journey Today</h3>
+        <p>Explore blogs, build projects, and level up your skills</p>
+        <a href="/blog" class="btn btn-warning btn-lg">Explore Blog</a>
+    </div>
+
+</div>
+
+{% endblock body %}
